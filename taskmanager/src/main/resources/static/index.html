@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<div id="toast" class="toast"></div>
+<h1>Task Manager</h1>
+<div class="tabs">
+    <button onclick="showTasks('ALL')">All</button>
+    <button onclick="showTasks('PENDING')">Pending</button>
+    <button onclick="showTasks('COMPLETED')">Completed</button>
+    <button onclick="showTasks('HIGH')">High Priority</button>
+</div>
+
+<button id="addTaskBtn" onclick="showForm()"style="display:none;">➕ Add New Task</button>
+
+<div id ="formSection">
+<form id="taskForm">
+<input type="text" id="title" placeholder="Title">
+<span class="error" id="titleError"></span>
+<input type="text" id="description" placeholder="Description">
+<span class="ërror" id="descrptionError"></span>
+<select id="priority">
+<option value="">Select Priority</option>
+<option value="LOW">LOW</option>
+<option value="MEDIUM">MEDIUM</option>
+<option value="HIGH">HIGH</option>
+</select>
+<span class="error" id="priorityError"></span>
+<select id="status">
+<option value="">Select Status</option>
+<option value="PENDING">PENDING</option>
+<option value="COMPLETED">COMPLETED</option>
+</select>
+<span class="error" id="statusError"></span>
+<input type="date" id="dueDate">
+<span class="error" id="dueDateError"></span>
+<button type="submit">Add Task</button>
+</form>
+</div>
+<hr>
+<div id="taskList"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
